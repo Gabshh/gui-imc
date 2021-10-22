@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.senai.sp.jandira.model.Imc;
 import br.senai.sp.jandira.status.TabelaStatus;
 import br.senai.sp.jandira.valores.Matematica;
 
@@ -98,7 +99,7 @@ public class Frame {
 				String pesoString = txtPeso.getText();
 				String alturaString = txtAltura.getText();
 				
-				Matematica calculo = new Matematica();
+				Imc calculo = new Imc();
 				
 				calculo.peso = Integer.parseInt(pesoString);
 				calculo.altura = Double.parseDouble(alturaString);
@@ -109,9 +110,9 @@ public class Frame {
 				
 				// Mostrar Status
 				
-				TabelaStatus Estados = new TabelaStatus();
 				
-				Estados.verificarStatus();
+				
+				
 				
 				lblEstadoResultado.setText(calculo.status);
 				
