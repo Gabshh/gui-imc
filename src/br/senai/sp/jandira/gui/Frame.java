@@ -1,5 +1,7 @@
 package br.senai.sp.jandira.gui;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,8 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import br.senai.sp.jandira.model.Imc;
-import br.senai.sp.jandira.status.TabelaStatus;
-import br.senai.sp.jandira.valores.Matematica;
 
 public class Frame {
 	
@@ -47,26 +47,36 @@ public class Frame {
 		
 		// RESULTADOS
 		
+		new Font("Sans Serif", Font.BOLD, 24);
+		
 		JLabel lblResultados = new JLabel();
 		lblResultados.setText("Resultados:");
 		lblResultados.setBounds(20, 150, 150, 30);
-//		lblResultados.
+		lblResultados.setForeground(Color.BLACK);
+		lblResultados.setFont(new Font("Sans Serif", Font.BOLD, 16));
+		
 		
 		JLabel lblValor = new JLabel();
 		lblValor.setText("Valor IMC: ");
 		lblValor.setBounds(20, 200, 150, 30);
+		lblValor.setFont(new Font("Sans Serif", Font.BOLD, 13));
 		
 		JLabel lblValorResultado = new JLabel();
 		lblValorResultado.setText("");
-		lblValorResultado.setBounds(100, 200, 35, 30);
+		lblValorResultado.setBounds(100, 200, 40, 30);
+		lblValorResultado.setForeground(Color.GREEN);
+		lblValorResultado.setFont(new Font("Sans Serif", Font.BOLD, 13));
 		
 		JLabel lblEstado = new JLabel();
 		lblEstado.setText("Estado IMC: ");
 		lblEstado.setBounds(20, 230, 150, 30);
+		lblEstado.setFont(new Font("Sans Serif", Font.BOLD, 13));
 		
 		JLabel lblEstadoResultado = new JLabel();
 		lblEstadoResultado.setText("");
-		lblEstadoResultado.setBounds(100, 230, 35, 30);
+		lblEstadoResultado.setBounds(100, 230, 150, 30);
+		lblEstadoResultado.setForeground(Color.GREEN);
+		lblEstadoResultado.setFont(new Font("Sans Serif", Font.BOLD, 13));
 		
 		
 		meuFrame.getContentPane().add(lblPeso);
@@ -110,20 +120,9 @@ public class Frame {
 				
 				// Mostrar Status
 				
+				calculo.setVerificarStatus();
 				
-				
-				
-				
-				lblEstadoResultado.setText(calculo.status);
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				lblEstadoResultado.setText((calculo.getStatus()));
 				
 			}
 		});
